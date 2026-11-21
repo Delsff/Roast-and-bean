@@ -31,8 +31,9 @@ const authLimiter = rateLimit({
 });
 app.set("trust proxy", 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
-
-const allowedOrigins = config.CLIENT_ORIGIN.split(",").map((o) => o.trim());
+const allowedOrigins = config.CLIENT_ORIGIN.split(",")
+  .map((o) => o.trim().replace(/\/+$/, ""))
+  .filter(Boolean);
 app.use(cors({ origin: allowedOrigins }));
 app.get(
   "/health",
