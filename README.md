@@ -160,7 +160,5 @@ cd frontend && npm test
 
 ## Screenshots
 
-<img width="1877" height="893" alt="Снимок экрана 2026-11-21 180119" src="https://github.com/user-attachments/assets/6f0ad54b-7d35-4155-a277-72697957ca40" />
-
 <img width="1645" height="887" alt="Снимок экрана 2026-11-21 180457" src="https://github.com/user-attachments/assets/5eada024-6a2c-4e1d-bdd5-168530aa29d7" />
 
