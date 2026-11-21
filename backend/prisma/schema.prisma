@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Category {
+  coffee_beans
+  accessories
+  equipment
+}
+
+enum RoastLevel {
+  light
+  medium
+  dark
+}
+
+enum OrderStatus {
+  pending
+  processing
+  completed
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  name        String
+  description String
+  price       Int // в центах
+  category    Category
+  roastLevel  RoastLevel?
+  imageUrl    String
+  inStock     Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+
+  orderItems OrderItem[]
+
+  @@index([category])
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  userId          String?
+  user            User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  customerName    String
+  customerEmail   String
+  customerAddress String
+  totalAmount     Int 
+  status          OrderStatus @default(pending)
+  createdAt       DateTime    @default(now())
+
+  items OrderItem[]
+
+  @@index([createdAt])
+  @@index([userId])
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId   String?
+  product     Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productName String
+  price       Int
+  quantity    Int
+}
+
+enum Role {
+  user
+  admin
+} 
+
+model User {
+   id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  role         Role     @default(user)
+  createdAt    DateTime @default(now())
+
+  orders Order[]
+}
