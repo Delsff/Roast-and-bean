@@ -2,7 +2,7 @@
 
 A full-stack e-commerce web application for a specialty coffee shop, built with **React**, **TypeScript**, **Express**, **Prisma** and **PostgreSQL**. Includes a product catalog with filters, a persistent cart, JWT authentication with roles, order management and an admin panel. Covered by automated tests and deployed with CI.
 
-[![CI](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/Delsff/roast-and-bean/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
 [![Live Demo](https://img.shields.io/badge/demo-online-brightgreen?style=for-the-badge&logo=netlify)](https://roastbean.netlify.app/)
 
 > ⏱️ The backend runs on a free Render plan and goes to sleep after inactivity. The first request after a pause can take up to a minute — skeleton loaders are shown while the API wakes up.
@@ -160,7 +160,7 @@ cd frontend && npm test
 
 ## Screenshots
 
-![Product page](<img width="1877" height="893" alt="Снимок экрана 2026-11-21 180119" src="https://github.com/user-attachments/assets/6f0ad54b-7d35-4155-a277-72697957ca40" />
-)
-![Admin panel](<img width="1645" height="887" alt="Снимок экрана 2026-11-21 180457" src="https://github.com/user-attachments/assets/5eada024-6a2c-4e1d-bdd5-168530aa29d7" />
-)
+<img width="1877" height="893" alt="Снимок экрана 2026-11-21 180119" src="https://github.com/user-attachments/assets/6f0ad54b-7d35-4155-a277-72697957ca40" />
+
+<img width="1645" height="887" alt="Снимок экрана 2026-11-21 180457" src="https://github.com/user-attachments/assets/5eada024-6a2c-4e1d-bdd5-168530aa29d7" />
+
